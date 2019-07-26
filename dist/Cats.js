@@ -9,13 +9,11 @@ var EnumCatSize;
 exports.EnumCatSize = EnumCatSize;
 function Cat(size, description) {
     if (!(size in EnumCatSize))
-        throw "not valid size!";
+        throw "not valid size!"; // if number param not in EnumCatSize
     return {
         size: size,
         description: description,
-        doubleSize: function () {
-            return size * 2;
-        }
+        doubleSize: function () { return size * 2; }
     };
 }
 exports.Cat = Cat;

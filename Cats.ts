@@ -16,13 +16,11 @@ interface ICatRobot extends ICat {
 }
 
 function Cat(size : EnumCatSize, description : string) : ICat {
-    if (!(size in EnumCatSize)) throw "not valid size!"
+    if (!(size in EnumCatSize)) throw "not valid size!" // if number param not in EnumCatSize
     return {
         size,
         description,
-        doubleSize() {
-            return size * 2;
-        }
+        doubleSize: () => size * 2  
     }
 }
 
