@@ -1,4 +1,6 @@
 
+import fetch from 'node-fetch';
+
 abstract class Animal{
   protected size: number;
   constructor (size : number) {
@@ -7,7 +9,7 @@ abstract class Animal{
   } 
 }
 
-class CatClass extends Animal {
+class Cat extends Animal {
   speed : number = 0;
   readonly name : string;
   protected sound : string = "miauw"; // also accesible within derived class
@@ -42,9 +44,13 @@ class CatClass extends Animal {
   speak() : string {
     return `${this.name} says ${this.sound}`;
   }
+
+  getGiphy (giphy : string = this.constructor.name) :  Promise<any> {
+    return fetch(`http://api.giphy.com/v1/gifs/search?q=${giphy}&api_key=VnykWQzn8GSjtW3YhPG1N9jXvZ6oZpvC&limit=1`);
+  }
   
 }
 
 export {
-  CatClass
+  Cat
 }

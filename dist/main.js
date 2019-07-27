@@ -10,10 +10,11 @@ var Tiger_1 = require("./Tiger");
 // console.log(CatRobot(catDomestic, "Intel"));
 var tiger = new Tiger_1.Tiger("Khan", 3);
 console.log(tiger);
-tiger.run(5);
-tiger.sprint();
-console.log(tiger.getSize);
-tiger.setSize = 10;
-console.log(tiger.getSize);
-console.log(tiger.speak());
-console.log(tiger);
+// tiger.run(5);
+// tiger.sprint();
+// console.log(tiger.getSize);
+// tiger.setSize = 10;
+// console.log(tiger.getSize);
+// console.log(tiger.speak());
+// console.log(tiger)
+tiger.getGiphy().then(function (res) { return res.json(); }).then(function (res) { return console.log(res.data[0].url); });

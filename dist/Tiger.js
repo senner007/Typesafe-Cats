@@ -13,7 +13,8 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var CatClass_1 = require("./CatClass");
+var Cat_1 = require("./Cat");
+// const fetch = require('node-fetch');
 var Tiger = /** @class */ (function (_super) {
     __extends(Tiger, _super);
     function Tiger(name, size) {
@@ -28,5 +29,5 @@ var Tiger = /** @class */ (function (_super) {
         console.log(this.name + " sprints with speed " + this.speed * 10 + ".");
     };
     return Tiger;
-}(CatClass_1.CatClass));
+}(Cat_1.Cat));
 exports.Tiger = Tiger;

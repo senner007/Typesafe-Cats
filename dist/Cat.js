@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var node_fetch_1 = require("node-fetch");
 var Animal = /** @class */ (function () {
     function Animal(size) {
         if (size < 1)
@@ -21,23 +22,23 @@ var Animal = /** @class */ (function () {
     }
     return Animal;
 }());
-var CatClass = /** @class */ (function (_super) {
-    __extends(CatClass, _super);
-    function CatClass(name, size) {
+var Cat = /** @class */ (function (_super) {
+    __extends(Cat, _super);
+    function Cat(name, size) {
         var _this = _super.call(this, size) || this;
         _this.speed = 0;
         _this.sound = "miauw"; // also accesible within derived class
         _this.name = name;
         return _this;
     }
-    Object.defineProperty(CatClass.prototype, "getSize", {
+    Object.defineProperty(Cat.prototype, "getSize", {
         get: function () {
             return this.size;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(CatClass.prototype, "setSize", {
+    Object.defineProperty(Cat.prototype, "setSize", {
         set: function (newSize) {
             if (newSize < 1 || newSize > 10) {
                 throw "invalid size";
@@ -47,17 +48,21 @@ var CatClass = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
-    CatClass.prototype.run = function (speed) {
+    Cat.prototype.run = function (speed) {
         this.speed += speed;
         console.log(this.name + " runs with speed " + this.speed + ".");
     };
-    CatClass.prototype.stop = function () {
+    Cat.prototype.stop = function () {
         this.speed = 0;
         console.log(this.name + " stopped.");
     };
-    CatClass.prototype.speak = function () {
+    Cat.prototype.speak = function () {
         return this.name + " says " + this.sound;
     };
-    return CatClass;
+    Cat.prototype.getGiphy = function (giphy) {
+        if (giphy === void 0) { giphy = this.constructor.name; }
+        return node_fetch_1.default("http://api.giphy.com/v1/gifs/search?q=" + giphy + "&api_key=VnykWQzn8GSjtW3YhPG1N9jXvZ6oZpvC&limit=1");
+    };
+    return Cat;
 }(Animal));
-exports.CatClass = CatClass;
+exports.Cat = Cat;

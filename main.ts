@@ -16,10 +16,11 @@ import {EnumCatSize} from "./Cats";
 
 var tiger = new Tiger("Khan", 3);
 console.log(tiger)
-tiger.run(5);
-tiger.sprint();
-console.log(tiger.getSize);
-tiger.setSize = 10;
-console.log(tiger.getSize);
-console.log(tiger.speak());
-console.log(tiger)
+// tiger.run(5);
+// tiger.sprint();
+// console.log(tiger.getSize);
+// tiger.setSize = 10;
+// console.log(tiger.getSize);
+// console.log(tiger.speak());
+// console.log(tiger)
+tiger.getGiphy().then(res => res.json()).then(res => console.log(res.data[0].url))
