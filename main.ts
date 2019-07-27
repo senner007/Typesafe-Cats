@@ -18,6 +18,8 @@ var tiger = new Tiger("Khan", 3);
 console.log(tiger)
 tiger.run(5);
 tiger.sprint();
+console.log(tiger.getSize);
 tiger.setSize = 10;
+console.log(tiger.getSize);
 console.log(tiger.speak());
 console.log(tiger)

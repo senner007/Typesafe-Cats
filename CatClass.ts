@@ -17,13 +17,17 @@ class CatClass extends Animal {
     this.name = name;
   }
 
+  get getSize () {
+    return this.size;
+  }
+
   set setSize(newSize : number) {
     if (newSize < 1 || newSize > 10) {
       throw "invalid size";
     }
 
     this.size = newSize; 
-}
+  }
 
   run(speed : number) {
     this.speed += speed;

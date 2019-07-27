@@ -30,6 +30,13 @@ var CatClass = /** @class */ (function (_super) {
         _this.name = name;
         return _this;
     }
+    Object.defineProperty(CatClass.prototype, "getSize", {
+        get: function () {
+            return this.size;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(CatClass.prototype, "setSize", {
         set: function (newSize) {
             if (newSize < 1 || newSize > 10) {
