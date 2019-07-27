@@ -2,6 +2,7 @@
 abstract class Animal implements IAnimal{
   size: number;
   constructor (size : number) {
+    if (size < 1) throw "invalid size"
     this.size = size;
   } 
 }
@@ -21,11 +22,12 @@ class CatClass extends Animal {
   }
 
   set setSize(newSize : number) {
-      if (newSize > 0 && newSize < 11) {
-        this.size = newSize;
-      }
-      else throw "invalid size"
-  }
+    if (newSize < 1 || newSize > 10) {
+      throw "invalid size";
+    }
+
+    this.size = newSize; 
+}
 
   run(speed : number) {
     this.speed += speed;
@@ -40,6 +42,7 @@ class CatClass extends Animal {
   speak() : string {
     return `${this.name} says ${this.sound}`;
   }
+  
 }
 
 export {

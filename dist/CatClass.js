@@ -15,6 +15,8 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Animal = /** @class */ (function () {
     function Animal(size) {
+        if (size < 1)
+            throw "invalid size";
         this.size = size;
     }
     return Animal;
@@ -30,11 +32,10 @@ var CatClass = /** @class */ (function (_super) {
     }
     Object.defineProperty(CatClass.prototype, "setSize", {
         set: function (newSize) {
-            if (newSize > 0 && newSize < 11) {
-                this.size = newSize;
-            }
-            else
+            if (newSize < 1 || newSize > 10) {
                 throw "invalid size";
+            }
+            this.size = newSize;
         },
         enumerable: true,
         configurable: true
