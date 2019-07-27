@@ -22,7 +22,7 @@ var Tiger = /** @class */ (function (_super) {
         return _this;
     }
     Tiger.prototype.speak = function () {
-        return _super.prototype.speak.call(this);
+        return _super.prototype.speak.call(this) + "!";
     };
     Tiger.prototype.sprint = function () {
         console.log(this.name + " sprints with speed " + this.speed * 10 + ".");

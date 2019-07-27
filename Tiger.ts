@@ -8,7 +8,7 @@ class Tiger extends CatClass {
   }
 
   speak() : string {
-    return super.speak();
+    return super.speak() + "!";
   }
 
   sprint () {
