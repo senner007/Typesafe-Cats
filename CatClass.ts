@@ -1,12 +1,27 @@
-class CatClass {
+
+abstract class Animal {
+  abstract size: number;
+  set setSize(newSize : number) {
+      this.size = newSize;
+  }
+}
+
+class CatClass extends Animal{
   speed : number = 0;
-  name : string;
   size : number;
-  sound : string = "miauw";
+  readonly name : string;
+  protected sound : string = "miauw"; // also accesible within derived class
   
   constructor(name : string, size : number) {
     this.name = name;
     this.size = size;
+  }
+
+  set setSize(newSize : number) {
+      if (newSize > 0 && newSize < 11) {
+        this.size = newSize;
+      }
+      else throw "invalid size"
   }
 
   run(speed : number) {

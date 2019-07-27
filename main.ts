@@ -17,5 +17,6 @@ import {EnumCatSize} from "./Cats";
 var tiger = new Tiger("Khan", 3);
 tiger.run(5);
 tiger.sprint();
+tiger.setSize = 10;
 console.log(tiger.speak());
 console.log(tiger)

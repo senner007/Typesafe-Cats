@@ -11,5 +11,6 @@ var Tiger_1 = require("./Tiger");
 var tiger = new Tiger_1.Tiger("Khan", 3);
 tiger.run(5);
 tiger.sprint();
+tiger.setSize = 10;
 console.log(tiger.speak());
 console.log(tiger);
