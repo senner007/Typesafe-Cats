@@ -15,6 +15,7 @@ import {EnumCatSize} from "./Cats";
 // console.log(CatRobot(catDomestic, "Intel"));
 
 var tiger = new Tiger("Khan", 3);
+console.log(tiger)
 tiger.run(5);
 tiger.sprint();
 tiger.setSize = 10;

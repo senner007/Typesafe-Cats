@@ -1,20 +1,23 @@
 
-abstract class Animal {
-  abstract size: number;
-  set setSize(newSize : number) {
-      this.size = newSize;
-  }
+abstract class Animal implements IAnimal{
+  size: number;
+  constructor (size : number) {
+    this.size = size;
+  } 
 }
 
-class CatClass extends Animal{
+interface IAnimal {
+  size: number;
+}
+
+class CatClass extends Animal {
   speed : number = 0;
-  size : number;
   readonly name : string;
   protected sound : string = "miauw"; // also accesible within derived class
   
   constructor(name : string, size : number) {
+    super(size)
     this.name = name;
-    this.size = size;
   }
 
   set setSize(newSize : number) {

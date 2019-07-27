@@ -14,25 +14,18 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Animal = /** @class */ (function () {
-    function Animal() {
+    function Animal(size) {
+        this.size = size;
     }
-    Object.defineProperty(Animal.prototype, "setSize", {
-        set: function (newSize) {
-            this.size = newSize;
-        },
-        enumerable: true,
-        configurable: true
-    });
     return Animal;
 }());
 var CatClass = /** @class */ (function (_super) {
     __extends(CatClass, _super);
     function CatClass(name, size) {
-        var _this = this;
+        var _this = _super.call(this, size) || this;
         _this.speed = 0;
         _this.sound = "miauw"; // also accesible within derived class
         _this.name = name;
-        _this.size = size;
         return _this;
     }
     Object.defineProperty(CatClass.prototype, "setSize", {

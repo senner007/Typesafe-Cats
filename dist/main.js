@@ -9,6 +9,7 @@ var Tiger_1 = require("./Tiger");
 // console.log(catDomestic)
 // console.log(CatRobot(catDomestic, "Intel"));
 var tiger = new Tiger_1.Tiger("Khan", 3);
+console.log(tiger);
 tiger.run(5);
 tiger.sprint();
 tiger.setSize = 10;
