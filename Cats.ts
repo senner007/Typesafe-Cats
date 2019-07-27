@@ -35,6 +35,7 @@ function CatRobot(cat : ICat, cpu : string) : ICatRobot {
 
 export {
     Cat,
+    ICat,
     CatDomestic,
     CatRobot,
     EnumCatSize
