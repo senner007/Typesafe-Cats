@@ -60,8 +60,12 @@ var Cat = /** @class */ (function (_super) {
         return this.name + " says " + this.sound;
     };
     Cat.prototype.getGiphy = function (giphy) {
+        var _this = this;
         if (giphy === void 0) { giphy = this.constructor.name; }
-        return node_fetch_1.default("http://api.giphy.com/v1/gifs/search?q=" + giphy + "&api_key=VnykWQzn8GSjtW3YhPG1N9jXvZ6oZpvC&limit=1");
+        return node_fetch_1.default("http://api.giphy.com/v1/gifs/search?q=" + giphy + "&api_key=VnykWQzn8GSjtW3YhPG1N9jXvZ6oZpvC&limit=1")
+            .then(function (res) { return res.json(); })
+            .then(function (res) { return _this.giphyUrl = res.data[0].url; })
+            .catch(function (error) { return console.error(error); });
     };
     return Cat;
 }(Animal));

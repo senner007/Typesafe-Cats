@@ -23,4 +23,6 @@ console.log(tiger)
 // console.log(tiger.getSize);
 // console.log(tiger.speak());
 // console.log(tiger)
-tiger.getGiphy().then(res => res.json()).then(res => console.log(res.data[0].url))
+tiger.getGiphy().then(res => console.log(tiger.giphyUrl))
+tiger.addKill({animal : "antilope", date : new Date()});
+console.log(tiger.getKills)

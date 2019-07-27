@@ -14,11 +14,11 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Cat_1 = require("./Cat");
-// const fetch = require('node-fetch');
 var Tiger = /** @class */ (function (_super) {
     __extends(Tiger, _super);
     function Tiger(name, size) {
         var _this = _super.call(this, name, size) || this;
+        _this.kills = [];
         _this.sound = "roar";
         return _this;
     }
@@ -28,6 +28,16 @@ var Tiger = /** @class */ (function (_super) {
     Tiger.prototype.sprint = function () {
         console.log(this.name + " sprints with speed " + this.speed * 10 + ".");
     };
+    Tiger.prototype.addKill = function (kill) {
+        this.kills.push(kill);
+    };
+    Object.defineProperty(Tiger.prototype, "getKills", {
+        get: function () {
+            return this.kills;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return Tiger;
 }(Cat_1.Cat));
 exports.Tiger = Tiger;

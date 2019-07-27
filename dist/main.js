@@ -17,4 +17,6 @@ console.log(tiger);
 // console.log(tiger.getSize);
 // console.log(tiger.speak());
 // console.log(tiger)
-tiger.getGiphy().then(function (res) { return res.json(); }).then(function (res) { return console.log(res.data[0].url); });
+tiger.getGiphy().then(function (res) { return console.log(tiger.giphyUrl); });
+tiger.addKill({ animal: "antilope", date: new Date() });
+console.log(tiger.getKills);
