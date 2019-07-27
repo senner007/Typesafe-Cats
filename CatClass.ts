@@ -1,14 +1,10 @@
 
-abstract class Animal implements IAnimal{
-  size: number;
+abstract class Animal{
+  protected size: number;
   constructor (size : number) {
     if (size < 1) throw "invalid size"
     this.size = size;
   } 
-}
-
-interface IAnimal {
-  size: number;
 }
 
 class CatClass extends Animal {
