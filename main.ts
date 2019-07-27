@@ -8,6 +8,6 @@ var cat2 = Cat(EnumCatSize.Small, "fluffy");
 var catDomestic = CatDomestic(cat);
 
 console.log(cat)
-console.log(cat.doubleSize())
+console.log(cat.speak())
 console.log(catDomestic)
 console.log(CatRobot(catDomestic, "Intel"));

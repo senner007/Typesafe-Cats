@@ -13,7 +13,7 @@ function Cat(size, description) {
     return {
         size: size,
         description: description,
-        doubleSize: function () { return size * 2; }
+        speak: function () { return "Miauw"; }
     };
 }
 exports.Cat = Cat;

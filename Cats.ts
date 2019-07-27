@@ -2,7 +2,7 @@ interface ICat {
     readonly size : EnumCatSize;
     description : string;
     domestic? : boolean; // optional
-    doubleSize: ()  => number;
+    speak: ()  => string;
 }
 
 enum EnumCatSize {
@@ -20,7 +20,7 @@ function Cat(size : EnumCatSize, description : string) : ICat {
     return {
         size,
         description,
-        doubleSize: () => size * 2  
+        speak: () => "Miauw"  
     }
 }
 
